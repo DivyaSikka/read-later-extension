@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Read-Later Extension",
+  "version": "1.0",
+  "host_permissions": ["<all_urls>"],
+  "permissions": ["tabs", "storage", "scripting"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["readability.js", "content.js"]
+  }]
+}
